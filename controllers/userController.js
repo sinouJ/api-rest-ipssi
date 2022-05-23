@@ -20,8 +20,8 @@ module.exports = {
     },
     createUser: (req, res) => {
         const User = new UserModel({
-            name: 'John Doe',
-            age: 30
+            name: req.body.name,
+            age: req.body.age
         })
 
         User.save( (err, user) => {
